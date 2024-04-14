@@ -26,11 +26,12 @@ import fire
 
 def encode_prompt(prompt_instructions):
     """Encode multiple prompt instructions into a single string."""
-    prompt = open("./prompt.txt").read() + "\n"
+    prompt = open("./prompt.txt", encoding="utf-8").read() + "\n"
 
     for idx, task_dict in enumerate(prompt_instructions):
         (instruction, input, output) = task_dict["instruction"], task_dict["input"], task_dict["output"]
         instruction = re.sub(r"\s+", " ", instruction).strip().rstrip(":")
+        input = str(input)
         input = "<noinput>" if input.lower() == "" else input
         prompt += f"###\n"
         prompt += f"{idx + 1}. Instruction: {instruction}\n"
@@ -111,7 +112,7 @@ def generate_instruction_following_data(
     output_dir="./",
     seed_tasks_path="./seed_tasks.jsonl",
     num_instructions_to_generate=100,
-    model_name="text-davinci-003",
+    model_name="gpt-3.5-turbo-16k",
     num_prompt_instructions=3,
     request_batch_size=5,
     temperature=1.0,

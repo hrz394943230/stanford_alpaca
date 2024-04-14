@@ -7,13 +7,14 @@ import sys
 import time
 import json
 from typing import Optional, Sequence, Union
-
+from openai import OpenAI
 import openai
 import tqdm
-from openai import openai_object
 import copy
 
-StrOrOpenAIObject = Union[str, openai_object.OpenAIObject]
+api_base = "https://api.openai-proxy.org/v1"
+api_key = "sk-oMCjsBS2Osp5lTABMu0Sh41QTE78nmVB8OqsEUSWUxLZ2QM6"
+
 
 openai_org = os.getenv("OPENAI_ORG")
 if openai_org is not None:
@@ -31,7 +32,7 @@ class OpenAIDecodingArguments(object):
     stop: Optional[Sequence[str]] = None
     presence_penalty: float = 0.0
     frequency_penalty: float = 0.0
-    suffix: Optional[str] = None
+    # suffix: Optional[str] = None
     logprobs: Optional[int] = None
     echo: bool = False
 
@@ -46,7 +47,7 @@ def openai_completion(
     max_batches=sys.maxsize,
     return_text=False,
     **decoding_kwargs,
-) -> Union[Union[StrOrOpenAIObject], Sequence[StrOrOpenAIObject], Sequence[Sequence[StrOrOpenAIObject]],]:
+) :
     """Decode with OpenAI API.
 
     Args:
@@ -103,14 +104,18 @@ def openai_completion(
                     **batch_decoding_args.__dict__,
                     **decoding_kwargs,
                 )
-                completion_batch = openai.Completion.create(prompt=prompt_batch, **shared_kwargs)
+                client = OpenAI(
+                    api_key = api_key,
+                    base_url = api_base,
+                )
+                completion_batch = client.chat.completions.create(messages=prompt_batch, **shared_kwargs)
                 choices = completion_batch.choices
 
                 for choice in choices:
                     choice["total_tokens"] = completion_batch.usage.total_tokens
                 completions.extend(choices)
                 break
-            except openai.error.OpenAIError as e:
+            except openai.OpenAIError as e:
                 logging.warning(f"OpenAIError: {e}.")
                 if "Please reduce your prompt" in str(e):
                     batch_decoding_args.max_tokens = int(batch_decoding_args.max_tokens * 0.8)
