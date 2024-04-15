@@ -11,5 +11,6 @@ delete_with_regex(original_content,regex_str)
 delete_with_full_str(original_content,delete_content)
 5.input的内容应该尽可能多样化，满足实际生产环境中的各种情况
 6.input产生的内容一定可以被上述函数的功能满足，可以通过多次调用来达到最终结果，具体输出形式为[function_call_json1,function_call_json2...]
+7.尽量生成相似度差异比较大的任务，我会进行相似度校验，只保留差异比较大的任务
 
-List of 8 tasks:
+List of tasks:

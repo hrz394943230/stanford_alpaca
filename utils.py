@@ -3,6 +3,7 @@ import logging
 import math
 import os
 import io
+import random
 import sys
 import time
 import json
@@ -108,11 +109,13 @@ def openai_completion(
                     api_key = api_key,
                     base_url = api_base,
                 )
-                completion_batch = client.chat.completions.create(messages=prompt_batch, **shared_kwargs)
+                seed = random.randint(0,9999)
+                print(seed)
+                completion_batch = client.completions.create(prompt=prompt_batch,seed=seed, **shared_kwargs)
                 choices = completion_batch.choices
 
-                for choice in choices:
-                    choice["total_tokens"] = completion_batch.usage.total_tokens
+                # for choice in choices:
+                #     choice["total_tokens"] = completion_batch.usage.total_tokens
                 completions.extend(choices)
                 break
             except openai.OpenAIError as e:
@@ -125,7 +128,7 @@ def openai_completion(
                     time.sleep(sleep_time)  # Annoying rate limit on requests.
 
     if return_text:
-        completions = [completion["text"] for completion in completions]
+        completions = [completion.text for completion in completions]
     if decoding_args.n > 1:
         # make completions a nested list, where each entry is a consecutive decoding_args.n of original entries.
         completions = [completions[i : i + decoding_args.n] for i in range(0, len(completions), decoding_args.n)]
@@ -176,3 +179,45 @@ def jload(f, mode="r"):
     jdict = json.load(f)
     f.close()
     return jdict
+
+if __name__ =="__main__":
+    class OpenAIDecodingArguments:
+        def __init__(self, n=2, stop=None, temperature=0.5, max_tokens=150):
+            self.n = n
+            self.stop = stop
+            self.temperature = temperature
+            self.max_tokens = max_tokens
+
+
+    # 示例：定义一个提示语句
+    prompts = ["Tell me a joke about robots.","Tell me a joke about waitress."]
+
+    # 解码参数实例化
+    decoding_args = OpenAIDecodingArguments()
+
+    # 其他参数（根据需要设置）
+    model_name = "gpt-3.5-turbo-instruct"
+    sleep_time = 2
+    batch_size = 1
+    max_instances = sys.maxsize
+    max_batches = sys.maxsize
+    return_text = True
+
+    # 假设我们已经设置了 API 密钥和 API 基础网址
+    # api_key = 'your_openai_api_key'
+    # api_base = 'https://api.openai.com'
+
+    # 调用函数
+    completions = openai_completion(
+        prompts=prompts,
+        decoding_args=decoding_args,
+        model_name=model_name,
+        sleep_time=sleep_time,
+        batch_size=batch_size,
+        max_instances=max_instances,
+        max_batches=max_batches,
+        return_text=return_text
+    )
+
+    # 打印结果
+    print(completions)

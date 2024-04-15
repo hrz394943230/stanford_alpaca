@@ -45,12 +45,12 @@ def encode_prompt(prompt_instructions):
 def post_process_gpt3_response(num_prompt_instructions, response):
     if response is None:
         return []
-    raw_instructions = f"{num_prompt_instructions+1}. Instruction:" + response["text"]
+    raw_instructions = f"{num_prompt_instructions+1}. Instruction:" + response.text
     raw_instructions = re.split("###", raw_instructions)
     instructions = []
     for idx, inst in enumerate(raw_instructions):
         # if the decoding stops due to length, the last example is likely truncated so we discard it
-        if idx == len(raw_instructions) - 1 and response["finish_reason"] == "length":
+        if idx == len(raw_instructions) - 1 and response.finish_reason == "length":
             continue
         idx += num_prompt_instructions + 1
         splitted_data = re.split(f"{idx}\.\s+(Instruction|Input|Output):", inst)
@@ -112,10 +112,10 @@ def generate_instruction_following_data(
     output_dir="./",
     seed_tasks_path="./seed_tasks.jsonl",
     num_instructions_to_generate=100,
-    model_name="gpt-3.5-turbo-16k",
-    num_prompt_instructions=3,
-    request_batch_size=5,
-    temperature=1.0,
+    model_name="gpt-3.5-turbo-instruct",
+    num_prompt_instructions=2,
+    request_batch_size=3,
+    temperature=0.3,
     top_p=1.0,
     num_cpus=16,
 ):
@@ -194,7 +194,7 @@ def generate_instruction_following_data(
             most_similar_instructions = {
                 all_instructions[i]: rouge_scores[i] for i in np.argsort(rouge_scores)[-10:][::-1]
             }
-            if max(rouge_scores) > 0.7:
+            if max(rouge_scores) > 0.05:
                 continue
             else:
                 keep += 1
@@ -215,4 +215,11 @@ def main(task, **kwargs):
 
 
 if __name__ == "__main__":
-    fire.Fire(main)
+    # fire.Fire(main)
+    # Temporarily set parameters for debugging
+    kwargs = {
+        "output_dir": "./output",
+        "num_instructions_to_generate": 100,
+        "model_name": "gpt-3.5-turbo-instruct"
+    }
+    generate_instruction_following_data(**kwargs)
