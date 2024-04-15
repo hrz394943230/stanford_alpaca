@@ -113,7 +113,7 @@ def generate_instruction_following_data(
     seed_tasks_path="./seed_tasks.jsonl",
     num_instructions_to_generate=100,
     model_name="gpt-3.5-turbo-instruct",
-    num_prompt_instructions=2,
+    num_prompt_instructions=4,
     request_batch_size=3,
     temperature=0.3,
     top_p=1.0,
@@ -184,7 +184,7 @@ def generate_instruction_following_data(
         keep = 0
         for instruction_data_entry in instruction_data:
             # computing similarity with the pre-tokenzied instructions
-            new_instruction_tokens = scorer._tokenizer.tokenize(instruction_data_entry["instruction"])
+            new_instruction_tokens = scorer._tokenizer.tokenize(instruction_data_entry["input"])
             with Pool(num_cpus) as p:
                 rouge_scores = p.map(
                     partial(rouge_scorer._score_lcs, new_instruction_tokens),
@@ -194,7 +194,7 @@ def generate_instruction_following_data(
             most_similar_instructions = {
                 all_instructions[i]: rouge_scores[i] for i in np.argsort(rouge_scores)[-10:][::-1]
             }
-            if max(rouge_scores) > 0.05:
+            if max(rouge_scores) > 0.4:
                 continue
             else:
                 keep += 1
@@ -219,7 +219,7 @@ if __name__ == "__main__":
     # Temporarily set parameters for debugging
     kwargs = {
         "output_dir": "./output",
-        "num_instructions_to_generate": 100,
+        "num_instructions_to_generate": 500,
         "model_name": "gpt-3.5-turbo-instruct"
     }
     generate_instruction_following_data(**kwargs)
