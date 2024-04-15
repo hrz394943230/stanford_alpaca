@@ -114,7 +114,7 @@ def generate_instruction_following_data(
     num_instructions_to_generate=100,
     model_name="gpt-3.5-turbo-instruct",
     num_prompt_instructions=4,
-    request_batch_size=3,
+    request_batch_size=6,
     temperature=0.3,
     top_p=1.0,
     num_cpus=16,
@@ -194,7 +194,7 @@ def generate_instruction_following_data(
             most_similar_instructions = {
                 all_instructions[i]: rouge_scores[i] for i in np.argsort(rouge_scores)[-10:][::-1]
             }
-            if max(rouge_scores) > 0.4:
+            if max(rouge_scores) > 0.2:
                 continue
             else:
                 keep += 1

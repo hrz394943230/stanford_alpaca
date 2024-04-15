@@ -1,0 +1,1028 @@
+[
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'First line\\nSecond line\\nThird line\\nFourth line', 'description': \"1. Add 'Newly added line' before 'Second line' 2. Replace 'Third line' with 'Replaced line'\", 'modified_text': 'First line\\nNewly added line\\nReplaced line\\nFourth line'}",
+        "output": "[{'function_name': 'insert_before_line', 'line_content': 'Second line', 'insert_content': 'Newly added line'}, {'function_name': 'replace_with_full_str', 'original_content': 'First line\\nSecond line\\nThird line\\nFourth line', 'old_content': 'Third line', 'new_content': 'Replaced line'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.04081632653061225
+        },
+        "avg_similarity_score": 0.04081632653061225
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am going to the store.\\nI need to buy some groceries.', 'description': \"Delete the line 'I am going to the store.'\", 'modified_text': 'I need to buy some groceries.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'I am going to the store.\\nI need to buy some groceries.', 'delete_content': 'I am going to the store.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.13636363636363635
+        },
+        "avg_similarity_score": 0.14053579270970573
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'The weather is nice today.\\nI am going for a walk.', 'description': \"Replace 'The weather is nice today.' with 'It's a beautiful day today.'\", 'modified_text': \"It's a beautiful day today.\\nI am going for a walk.\"}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'The weather is nice today.\\nI am going for a walk.', 'old_content': 'The weather is nice today.', 'new_content': \"It's a beautiful day today.\"}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.07547169811320753
+        },
+        "avg_similarity_score": 0.10298361068585933
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': \"This is a test sentence.\\nThis is another test sentence.\", 'description': \"1. Insert 'This is a new sentence.' after the first line. 2. Delete the second line.\", 'modified_text': \"This is a test sentence.\\nThis is a new sentence.\"}",
+        "output": "[{'function_name': 'insert_behind_line', 'line_content': 'This is a test sentence.', 'insert_content': 'This is a new sentence.'}, {'function_name': 'delete_with_full_str', 'original_content': \"This is a test sentence.\\nThis is another test sentence.\", 'delete_content': 'This is another test sentence.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.07547169811320753
+        },
+        "avg_similarity_score": 0.1201830527994092
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': \"This is a test sentence.\\nThis is another test sentence.\", 'description': \"1. Replace all instances of 'test' with 'trial'. 2. Insert 'Note: This is a test.' before the first line.\", 'modified_text': \"Note: This is a test.\\nThis is a trial sentence.\\nThis is another trial sentence.\"}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': \"This is a test sentence.\\nThis is another test sentence.\", 'old_content': 'test', 'new_content': 'trial'}, {'function_name': 'insert_before_line', 'line_content': 'This is a test sentence.', 'insert_content': 'Note: This is a test.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.06557377049180327
+        },
+        "avg_similarity_score": 0.15519062927035138
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': \"I am a student\\nI am studying computer science\\nI am learning Python\", 'description': \"Delete the second and third lines\", 'modified_text': \"I am a student\\nI am learning Python\"}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': \"I am a student\\nI am studying computer science\\nI am learning Python\", 'delete_content': 'I am studying computer science\\n'}, {'function_name': 'delete_with_full_str', 'original_content': \"I am a student\\nI am studying computer science\\nI am learning Python\", 'delete_content': 'I am learning Python'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.09090909090909091
+        },
+        "avg_similarity_score": 0.15744573907294776
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': \"I am a student\\nI am studying computer science\\nI am learning Python\", 'description': \"Replace all instances of 'I am' with 'I'm'\", 'modified_text': \"I'm a student\\nI'm studying computer science\\nI'm learning Python\"}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': \"I am a student\\nI am studying computer science\\nI am learning Python\", 'old_content': 'I am', 'new_content': \"I'm\"}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.03846153846153846
+        },
+        "avg_similarity_score": 0.15541714839467646
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'def add(x, y):\\n    return x + y', 'description': 'Insert \\'# This is a comment\\' after the first line', 'modified_text': 'def add(x, y):\\n    # This is a comment\\n    return x + y'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'def add(x, y):\\n    return x + y', 'line_content': 'def add(x, y):', 'insert_content': '# This is a comment'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.0851063829787234
+        },
+        "avg_similarity_score": 0.16094333218459508
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a long sentence that needs to be shortened.', 'description': 'Insert \\'...\\' at the end of the sentence', 'modified_text': 'This is a long sentence that needs to be shortened...'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'This is a long sentence that needs to be shortened.', 'line_content': 'shortened.', 'insert_content': '...'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.09090909090909091
+        },
+        "avg_similarity_score": 0.18808328574385894
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a sentence\\nI am another sentence\\nI am a third sentence', 'description': \"Insert 'I am a new sentence' after the second line\", 'modified_text': 'I am a sentence\\nI am another sentence\\nI am a new sentence\\nI am a third sentence'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'I am a sentence\\nI am another sentence\\nI am a third sentence', 'line_content': 'I am another sentence', 'insert_content': 'I am a new sentence\\n'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.06896551724137931
+        },
+        "avg_similarity_score": 0.2147072906514834
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a sentence with a typo', 'description': \"Replace 'typo' with 'spelling mistake'\", 'modified_text': 'This is a sentence with a spelling mistake'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'This is a sentence with a typo', 'old_content': 'typo', 'new_content': 'spelling mistake'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.17543859649122806
+        },
+        "avg_similarity_score": 0.20102936637047927
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a test string', 'description': \"Replace 'test' with 'example'\", 'modified_text': 'This is a example string'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'This is a test string', 'old_content': 'test', 'new_content': 'example'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.21538461538461537
+        },
+        "avg_similarity_score": 0.22759728646948144
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a test string', 'description': \"1. Add 'New line' before 'This is a test string' 2. Replace 'test' with 'example' 3. Delete 'string'\", 'modified_text': 'New line This is a example'}",
+        "output": "[{'function_name': 'insert_before_line', 'line_content': 'This is a test string', 'insert_content': 'New line'}, {'function_name': 'replace_with_full_str', 'original_content': 'New line This is a test string', 'old_content': 'test', 'new_content': 'example'}, {'function_name': 'delete_with_full_str', 'original_content': 'New line This is a example string', 'delete_content': 'string'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.24324324324324323
+        },
+        "avg_similarity_score": 0.2279955660294178
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a student.\\nI love to read books.', 'description': 'Delete the second line', 'modified_text': 'I am a student.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'I am a student.\\nI love to read books.', 'delete_content': 'I love to read books.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2857142857142857
+        },
+        "avg_similarity_score": 0.2671133308814749
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a programmer.\\nI love to code.', 'description': \"Insert 'I am also a gamer.' after 'I am a programmer.'\", 'modified_text': 'I am a programmer.\\nI am also a gamer.\\nI love to code.'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'I am a programmer.\\nI love to code.', 'line_content': 'I am a programmer.', 'insert_content': 'I am also a gamer.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.25
+        },
+        "avg_similarity_score": 0.21659173472646867
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I have a cat.\\nShe is very cute.', 'description': \"Replace 'cat' with 'dog'\", 'modified_text': 'I have a dog.\\nShe is very cute.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I have a cat.\\nShe is very cute.', 'old_content': 'cat', 'new_content': 'dog'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.27272727272727276
+        },
+        "avg_similarity_score": 0.21075947368617245
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I have a red car.\\nIt is very fast.', 'description': \"Replace 'red' with 'blue'\", 'modified_text': 'I have a blue car.\\nIt is very fast.'}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'I have a red car.\\nIt is very fast.', 'regex_str': 'red', 'new_content': 'blue'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2647058823529412
+        },
+        "avg_similarity_score": 0.22212575285226813
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I have a dog.\\nHe is very friendly.', 'description': \"Delete 'He is very friendly.'\", 'modified_text': 'I have a dog.'}",
+        "output": "[{'function_name': 'delete_with_regex', 'original_content': 'I have a dog.\\nHe is very friendly.', 'regex_str': 'He is very friendly.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.28571428571428575
+        },
+        "avg_similarity_score": 0.23883556072015402
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love apples, oranges, and bananas.', 'description': \"Replace 'apples' with 'strawberries'\", 'modified_text': 'I love strawberries, oranges, and bananas.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I love apples, oranges, and bananas.', 'old_content': 'apples', 'new_content': 'strawberries'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2641509433962264
+        },
+        "avg_similarity_score": 0.20754350752987805
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a student at XYZ University.', 'description': \"Replace 'XYZ University' with 'ABC College'\", 'modified_text': 'I am a student at ABC College.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I am a student at XYZ University.', 'old_content': 'XYZ University', 'new_content': 'ABC College'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.3548387096774193
+        },
+        "avg_similarity_score": 0.25887359433306734
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Hello world!\\nThis is a test.\\nThis is another test.', 'description': \"1. Replace all lines starting with 'This' with 'This is a new line.' 2. Delete the first line\", 'modified_text': 'This is a new line.\\nThis is a new line.'}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'Hello world!\\nThis is a test.\\nThis is another test.', 'regex_str': \"^This.*\", 'new_content': 'This is a new line.'}, {'function_name': 'delete_with_full_str', 'original_content': 'Hello world!\\nThis is a test.\\nThis is another test.', 'delete_content': 'Hello world!'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.30769230769230765
+        },
+        "avg_similarity_score": 0.26082294904484565
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a sentence.\\nThis is another sentence.', 'description': \"1. Replace 'This is a sentence.' with 'This is a new sentence.' 2. Insert 'This is a third sentence.' after 'This is another sentence.'\", 'modified_text': 'This is a new sentence.\\nThis is another sentence.\\nThis is a third sentence.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'This is a sentence.\\nThis is another sentence.', 'old_content': 'This is a sentence.', 'new_content': 'This is a new sentence.'}, {'function_name': 'insert_behind_line', 'line_content': 'This is another sentence.', 'insert_content': 'This is a third sentence.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2894736842105263
+        },
+        "avg_similarity_score": 0.2395937244713769
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'First line\\nSecond line\\nThird line', 'description': \"Insert 'New line' after 'Second line'\", 'modified_text': 'First line\\nSecond line\\nNew line\\nThird line'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'First line\\nSecond line\\nThird line', 'line_content': 'Second line', 'insert_content': 'New line'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.21739130434782608
+        },
+        "avg_similarity_score": 0.1915261099388636
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'First line\\nSecond line\\nThird line', 'description': \"Delete all lines containing 'line'\", 'modified_text': ''}",
+        "output": "[{'function_name': 'delete_with_regex', 'original_content': 'First line\\nSecond line\\nThird line', 'regex_str': \".*line.*\"}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.27027027027027023
+        },
+        "avg_similarity_score": 0.2183717555463563
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I like to eat apples.\\nI also like to eat bananas.', 'description': \"Replace 'bananas' with 'oranges'\", 'modified_text': 'I like to eat apples.\\nI also like to eat oranges.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I like to eat apples.\\nI also like to eat bananas.', 'old_content': 'bananas', 'new_content': 'oranges'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.28
+        },
+        "avg_similarity_score": 0.2050701798033398
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'The cat is black.\\nThe dog is brown.', 'description': \"Insert 'The mouse is grey.' after 'The cat is black.'\", 'modified_text': 'The cat is black.\\nThe mouse is grey.\\nThe dog is brown.'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'The cat is black.\\nThe dog is brown.', 'line_content': 'The cat is black.', 'insert_content': 'The mouse is grey.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.23880597014925375
+        },
+        "avg_similarity_score": 0.2096911337745019
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am going to the store.\\nI need to buy milk.', 'description': \"Delete 'I need to buy milk.'\", 'modified_text': 'I am going to the store.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'I am going to the store.\\nI need to buy milk.', 'delete_content': 'I need to buy milk.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.28571428571428575
+        },
+        "avg_similarity_score": 0.23018953047969576
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love to eat apples.\\nApples are my favorite fruit.', 'description': \"Replace 'apples' with 'oranges' in the second line\", 'modified_text': 'I love to eat apples.\\nOranges are my favorite fruit.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I love to eat apples.\\nApples are my favorite fruit.', 'old_content': 'apples', 'new_content': 'oranges'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2769230769230769
+        },
+        "avg_similarity_score": 0.2320008770379698
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a student.\\nI am studying computer science.', 'description': \"Replace 'I am' with 'He is' in both lines\", 'modified_text': 'He is a student.\\nHe is studying computer science.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I am a student.\\nI am studying computer science.', 'old_content': 'I am', 'new_content': 'He is'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.34782608695652173
+        },
+        "avg_similarity_score": 0.2660325510101172
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I have a cat.\\nShe is a tabby.', 'description': \"Replace 'She' with 'He' in the second line\", 'modified_text': 'I have a cat.\\nHe is a tabby.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I have a cat.\\nShe is a tabby.', 'old_content': 'She', 'new_content': 'He'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.38888888888888895
+        },
+        "avg_similarity_score": 0.3091433004610205
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': \"I am a student.\\nI am studying computer science.\\nI am interested in artificial intelligence.\", 'description': \"1. Delete the line 'I am studying computer science.' 2. Replace 'artificial intelligence' with 'machine learning'\", 'modified_text': \"I am a student.\\nI am interested in machine learning.\"}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': \"I am a student.\\nI am studying computer science.\\nI am interested in artificial intelligence.\", 'delete_content': 'I am studying computer science.'}, {'function_name': 'replace_with_full_str', 'original_content': \"I am a student.\\nI am interested in artificial intelligence.\", 'old_content': 'artificial intelligence', 'new_content': 'machine learning'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.3098591549295775
+        },
+        "avg_similarity_score": 0.2587647837677367
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': \"I am a teacher.\\nI teach math and science.\\nI enjoy helping students learn.\", 'description': \"1. Delete all lines containing 'teacher' 2. Insert 'Note: This is a volunteer position.' after 'I enjoy helping students learn.'\", 'modified_text': \"Note: This is a volunteer position.\"}",
+        "output": "[{'function_name': 'delete_with_regex', 'original_content': \"I am a teacher.\\nI teach math and science.\\nI enjoy helping students learn.\", 'regex_str': \".*teacher.*\"}, {'function_name': 'insert_behind_line', 'original_content': \"I am a teacher.\\nI teach math and science.\\nI enjoy helping students learn.\", 'line_content': 'I enjoy helping students learn.', 'insert_content': 'Note: This is a volunteer position.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.3291139240506329
+        },
+        "avg_similarity_score": 0.23130000301328968
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a student at XYZ University.\\nI am majoring in Computer Science.\\nI am currently a junior.', 'description': \"1. Replace 'I am currently a junior.' with 'I am currently a senior.' 2. Delete the line 'I am majoring in Computer Science.'\", 'modified_text': 'I am a student at XYZ University.\\nI am currently a senior.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I am a student at XYZ University.\\nI am majoring in Computer Science.\\nI am currently a junior.', 'old_content': 'I am currently a junior.', 'new_content': 'I am currently a senior.'}, {'function_name': 'delete_with_full_str', 'original_content': 'I am a student at XYZ University.\\nI am majoring in Computer Science.\\nI am currently a junior.', 'delete_content': 'I am majoring in Computer Science.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.31683168316831684
+        },
+        "avg_similarity_score": 0.2536605794785118
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love to travel.\\nMy favorite destinations are the beach and the mountains.\\nI have been to 10 different countries.', 'description': \"1. Replace 'I have been to 10 different countries.' with 'I have been to over 20 countries.' 2. Insert 'Note: I am an avid traveler.' before 'I love to travel.'\", 'modified_text': 'Note: I am an avid traveler.\\nI love to travel.\\nMy favorite destinations are the beach and the mountains.\\nI have been to over 20 countries.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I love to travel.\\nMy favorite destinations are the beach and the mountains.\\nI have been to 10 different countries.', 'old_content': 'I have been to 10 different countries.', 'new_content': 'I have been to over 20 countries.'}, {'function_name': 'insert_before_line', 'line_content': 'I love to travel.', 'insert_content': 'Note: I am an avid traveler.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2204724409448819
+        },
+        "avg_similarity_score": 0.16417912881366165
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Today is a good day.\\nTomorrow will be even better.', 'description': \"Insert 'But' at the beginning of the second line\", 'modified_text': 'Today is a good day.\\nBut tomorrow will be even better.'}",
+        "output": "[{'function_name': 'insert_before_line', 'original_content': 'Today is a good day.\\nTomorrow will be even better.', 'line_content': 'Tomorrow will be even better.', 'insert_content': 'But '}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.0851063829787234
+        },
+        "avg_similarity_score": 0.08510638297872342
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am happy.\\nI am content.', 'description': \"Replace 'content' with 'satisfied'\", 'modified_text': 'I am happy.\\nI am satisfied.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I am happy.\\nI am content.', 'old_content': 'content', 'new_content': 'satisfied'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.060606060606060615
+        },
+        "avg_similarity_score": 0.063349441256418
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love to travel.\\nI have been to many countries.\\nI want to visit more places.', 'description': \"Replace 'travel' with 'explore'\", 'modified_text': 'I love to explore.\\nI have been to many countries.\\nI want to visit more places.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I love to travel.\\nI have been to many countries.\\nI want to visit more places.', 'old_content': 'travel', 'new_content': 'explore'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.037735849056603765
+        },
+        "avg_similarity_score": 0.04707552994143633
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'First line\\nSecond line\\nThird line\\nFourth line', 'description': \"1. Replace 'Second line' with 'New second line' 2. Delete 'Fourth line'\", 'modified_text': 'First line\\nNew second line\\nThird line'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'First line\\nSecond line\\nThird line\\nFourth line', 'old_content': 'Second line', 'new_content': 'New second line'}, {'function_name': 'delete_with_full_str', 'original_content': 'First line\\nNew second line\\nThird line\\nFourth line', 'delete_content': 'Fourth line'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.045454545454545456
+        },
+        "avg_similarity_score": 0.057199508850789796
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': \"This is a sample text\\nIt contains some words\\nThat need to be replaced\", 'description': \"Replace all instances of 'words' with 'phrases'\", 'modified_text': \"This is a sample text\\nIt contains some phrases\\nThat need to be replaced\"}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': \"This is a sample text\\nIt contains some words\\nThat need to be replaced\", 'old_content': 'words', 'new_content': 'phrases'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.03846153846153846
+        },
+        "avg_similarity_score": 0.05612085823418682
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'The cat is black.\\nThe dog is brown.\\nThe bird is blue.', 'description': \"Replace 'The cat is black.' with 'The cat is white.' and delete 'The bird is blue.'\", 'modified_text': 'The cat is white.\\nThe dog is brown.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'The cat is black.\\nThe dog is brown.\\nThe bird is blue.', 'old_content': 'The cat is black.', 'new_content': 'The cat is white.'}, {'function_name': 'delete_with_full_str', 'original_content': 'The cat is black.\\nThe dog is brown.\\nThe bird is blue.', 'delete_content': 'The bird is blue.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.11320754716981131
+        },
+        "avg_similarity_score": 0.11320754716981138
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a test string.\\nThis is another test string.\\nThis is the last test string.', 'description': \"1. Replace all lines containing 'test' with 'example' 2. Delete 'This is the last test string.'\", 'modified_text': 'This is a example string.\\nThis is another example string.'}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'This is a test string.\\nThis is another test string.\\nThis is the last test string.', 'regex_str': '.*test.*', 'new_content': 'example'}, {'function_name': 'delete_with_full_str', 'original_content': 'This is a example string.\\nThis is another example string.\\nThis is the last test string.', 'delete_content': 'This is the last test string.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.06779661016949153
+        },
+        "avg_similarity_score": 0.07301296866974832
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love coding\\nIt is my passion\\nCoding makes me happy', 'description': \"Insert 'Coding is fun' after 'I love coding'\", 'modified_text': 'I love coding\\nCoding is fun\\nIt is my passion\\nCoding makes me happy'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'I love coding\\nIt is my passion\\nCoding makes me happy', 'line_content': 'I love coding', 'insert_content': 'Coding is fun'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.04
+        },
+        "avg_similarity_score": 0.047339036880575024
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love to travel.\\nMy favorite places are the beach and the mountains.', 'description': \"Delete the line 'My favorite places are the beach and the mountains.'\", 'modified_text': 'I love to travel.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'I love to travel.\\nMy favorite places are the beach and the mountains.', 'delete_content': 'My favorite places are the beach and the mountains.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.13043478260869565
+        },
+        "avg_similarity_score": 0.13689264626945788
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love to travel.\\nI have been to 10 different countries.', 'description': \"Add 'My favorite country is Japan.' after 'I have been to 10 different countries.'\", 'modified_text': 'I love to travel.\\nI have been to 10 different countries.\\nMy favorite country is Japan.'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'I love to travel.\\nI have been to 10 different countries.', 'line_content': 'I have been to 10 different countries.', 'insert_content': 'My favorite country is Japan.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.034482758620689655
+        },
+        "avg_similarity_score": 0.05130726743793551
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am learning Python.\\nIt is a fun and useful language.', 'description': \"Replace 'Python' with 'Java'\", 'modified_text': 'I am learning Java.\\nIt is a fun and useful language.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I am learning Python.\\nIt is a fun and useful language.', 'old_content': 'Python', 'new_content': 'Java'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.046511627906976744
+        },
+        "avg_similarity_score": 0.06713239283337286
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a sample text.\\nPlease make changes here.', 'description': \"1. Add 'New line' after 'This is a sample text.' 2. Replace 'Please make changes here.' with 'Please make the necessary changes.'\", 'modified_text': 'This is a sample text.\\nNew line\\nPlease make the necessary changes.'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'This is a sample text.\\nPlease make changes here.', 'line_content': 'This is a sample text.', 'insert_content': 'New line'}, {'function_name': 'replace_with_full_str', 'original_content': 'This is a sample text.\\nNew line\\nPlease make changes here.', 'old_content': 'Please make changes here.', 'new_content': 'Please make the necessary changes.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.06666666666666667
+        },
+        "avg_similarity_score": 0.0845153567113546
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am an AI model.\\nI can help you with various tasks.', 'description': \"Add a line 'I am constantly learning.' after 'I am an AI model.'\", 'modified_text': 'I am an AI model.\\nI am constantly learning.\\nI can help you with various tasks.'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'I am an AI model.\\nI can help you with various tasks.', 'line_content': 'I am an AI model.', 'insert_content': 'I am constantly learning.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.034482758620689655
+        },
+        "avg_similarity_score": 0.05459754390424608
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am going to the store.\\nI need to buy milk.', 'description': \"1. Delete the line 'I am going to the store.' 2. Replace 'milk' with 'eggs'\", 'modified_text': 'I need to buy eggs.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'I am going to the store.\\nI need to buy milk.', 'delete_content': 'I am going to the store.'}, {'function_name': 'replace_with_full_str', 'original_content': 'I need to buy milk.', 'old_content': 'milk', 'new_content': 'eggs'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.125
+        },
+        "avg_similarity_score": 0.1465860853132859
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I have a cat.\\nShe is very cute.', 'description': \"Replace 'cat' with 'dog' and 'cute' with 'adorable'\", 'modified_text': 'I have a dog.\\nShe is very adorable.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I have a cat.\\nShe is very cute.', 'old_content': 'cat', 'new_content': 'dog'}, {'function_name': 'replace_with_full_str', 'original_content': 'I have a cat.\\nShe is very cute.', 'old_content': 'cute', 'new_content': 'adorable'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.04878048780487805
+        },
+        "avg_similarity_score": 0.08583749042042574
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a student studying computer science.\\nI am currently in my third year.\\nI am looking for an internship.', 'description': \"1. Delete the line 'I am currently in my third year.' 2. Replace 'internship' with 'full-time job'\", 'modified_text': 'I am a student studying computer science.\\nI am looking for a full-time job.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'I am a student studying computer science.\\nI am currently in my third year.\\nI am looking for an internship.', 'delete_content': 'I am currently in my third year.'}, {'function_name': 'replace_with_full_str', 'original_content': 'I am a student studying computer science.\\nI am looking for an internship.', 'old_content': 'internship', 'new_content': 'full-time job'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.14141414141414144
+        },
+        "avg_similarity_score": 0.08911239465928773
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love apples.\\nI also love bananas.\\nBut I hate oranges.', 'description': \"Delete all lines containing 'love'\", 'modified_text': 'But I hate oranges.'}",
+        "output": "[{'function_name': 'delete_with_regex', 'original_content': 'I love apples.\\nI also love bananas.\\nBut I hate oranges.', 'regex_str': '[^\\\\n]*love[^\\\\n]*'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.1818181818181818
+        },
+        "avg_similarity_score": 0.0891801416071779
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'First line\\nSecond line\\nThird line\\nFourth line\\nFifth line', 'description': \"1. Delete lines 2-4 2. Insert 'New line' after 'First line'\", 'modified_text': 'First line\\nNew line\\nFifth line'}",
+        "output": "[{'function_name': 'delete_with_regex', 'original_content': 'First line\\nSecond line\\nThird line\\nFourth line\\nFifth line', 'regex_str': 'Second line|Third line|Fourth line'}, {'function_name': 'insert_behind_line', 'line_content': 'First line', 'insert_content': 'New line'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.16129032258064518
+        },
+        "avg_similarity_score": 0.07499213733162878
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a sentence.\\nI am another sentence.', 'description': \"1. Replace 'I am a sentence.' with 'I am a new sentence.' 2. Delete 'I am another sentence.'\", 'modified_text': 'I am a new sentence.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I am a sentence.\\nI am another sentence.', 'old_content': 'I am a sentence.', 'new_content': 'I am a new sentence.'}, {'function_name': 'delete_with_full_str', 'original_content': 'I am a sentence.\\nI am another sentence.', 'delete_content': 'I am another sentence.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.21951219512195125
+        },
+        "avg_similarity_score": 0.09491570477296113
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a test.\\nPlease ignore this line.\\nThis is another test.', 'description': \"1. Replace 'This is a test.' with 'This is a new test.' 2. Delete 'Please ignore this line.'\", 'modified_text': 'This is a new test.\\nThis is another test.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'This is a test.\\nPlease ignore this line.\\nThis is another test.', 'old_content': 'This is a test.', 'new_content': 'This is a new test.'}, {'function_name': 'delete_with_full_str', 'original_content': 'This is a new test.\\nThis is another test.', 'delete_content': 'Please ignore this line.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.03571428571428572
+        },
+        "avg_similarity_score": 0.03571428571428571
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Today is Monday.\\nTomorrow is Tuesday.\\nWednesday is hump day.', 'description': \"Replace 'Monday' with 'Sunday' and 'Tuesday' with 'Monday'\", 'modified_text': 'Today is Sunday.\\nTomorrow is Monday.\\nWednesday is hump day.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'Today is Monday.\\nTomorrow is Tuesday.\\nWednesday is hump day.', 'old_content': 'Monday', 'new_content': 'Sunday'}, {'function_name': 'replace_with_full_str', 'original_content': 'Today is Sunday.\\nTomorrow is Tuesday.\\nWednesday is hump day.', 'old_content': 'Tuesday', 'new_content': 'Monday'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.04444444444444444
+        },
+        "avg_similarity_score": 0.048335893497183806
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a test.\\nPlease ignore this line.\\nThis is another test.', 'description': \"1. Replace all lines containing 'test' with 'example' 2. Insert 'Note: This is a test.' before 'This is another test.'\", 'modified_text': 'Note: This is a test.\\nThis is another example.'}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'This is a test.\\nPlease ignore this line.\\nThis is another test.', 'regex_str': '.*test.*', 'new_content': 'example'}, {'function_name': 'insert_before_line', 'original_content': 'This is a test.\\nPlease ignore this line.\\nThis is another example.', 'line_content': 'This is another example.', 'insert_content': 'Note: This is a test.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.034482758620689655
+        },
+        "avg_similarity_score": 0.03448275862068965
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a student.\\nI love to learn.\\nI am passionate about my studies.', 'description': \"Delete the second line\", 'modified_text': 'I am a student.\\nI am passionate about my studies.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'I am a student.\\nI love to learn.\\nI am passionate about my studies.', 'delete_content': 'I love to learn.\\n'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.08888888888888888
+        },
+        "avg_similarity_score": 0.08888888888888889
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a sentence.\\nThis is another sentence.\\nThis is the last sentence.', 'description': \"Replace all occurrences of 'is' with 'was'\", 'modified_text': 'Thwas was a sentence.\\nThwas was another sentence.\\nThwas was the last sentence.'}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'This is a sentence.\\nThis is another sentence.\\nThis is the last sentence.', 'regex_str': 'is', 'new_content': 'was'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.08
+        },
+        "avg_similarity_score": 0.08180281690140845
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love coding.\\nI am a programmer.\\nI am learning Python.', 'description': \"1. Replace 'I love coding.' with 'I love programming.' 2. Delete 'I am a programmer.'\", 'modified_text': 'I love programming.\\nI am learning Python.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I love coding.\\nI am a programmer.\\nI am learning Python.', 'old_content': 'I love coding.', 'new_content': 'I love programming.'}, {'function_name': 'delete_with_full_str', 'original_content': 'I love programming.\\nI am a programmer.\\nI am learning Python.', 'delete_content': 'I am a programmer.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.04
+        },
+        "avg_similarity_score": 0.047952916863220785
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Hello world!\\nWelcome to our company.\\nWe are hiring.\\nJoin us now!', 'description': \"1. Add 'We offer competitive salary and benefits.' after 'We are hiring.' 2. Replace 'Welcome to our company.' with 'Welcome to our team.'\", 'modified_text': 'Hello world!\\nWelcome to our team.\\nWe are hiring.\\nWe offer competitive salary and benefits.\\nJoin us now!'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'Hello world!\\nWelcome to our company.\\nWe are hiring.\\nJoin us now!', 'old_content': 'Welcome to our company.', 'new_content': 'Welcome to our team.'}, {'function_name': 'insert_behind_line', 'original_content': 'Hello world!\\nWelcome to our team.\\nWe are hiring.\\nJoin us now!', 'line_content': 'We are hiring.', 'insert_content': 'We offer competitive salary and benefits.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.028571428571428574
+        },
+        "avg_similarity_score": 0.033924471051336724
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'The meeting will be held on Monday at 9am.\\nPlease be on time.', 'description': \"1. Replace 'Monday' with 'Tuesday' 2. Delete the line 'Please be on time.'\", 'modified_text': 'The meeting will be held on Tuesday at 9am.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'The meeting will be held on Monday at 9am.\\nPlease be on time.', 'old_content': 'Monday', 'new_content': 'Tuesday'}, {'function_name': 'delete_with_full_str', 'original_content': 'The meeting will be held on Monday at 9am.\\nPlease be on time.', 'delete_content': 'Please be on time.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.15384615384615383
+        },
+        "avg_similarity_score": 0.15758495178893475
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'First line\\nSecond line\\nThird line\\nFourth line\\nFifth line', 'description': \"1. Add 'New line' after 'Second line' 2. Replace 'Fourth line' with 'Modified line'\", 'modified_text': 'First line\\nSecond line\\nNew line\\nModified line\\nFifth line'}",
+        "output": "[{'function_name': 'insert_behind_line', 'line_content': 'Second line', 'insert_content': 'New line'}, {'function_name': 'replace_with_full_str', 'original_content': 'First line\\nSecond line\\nNew line\\nFourth line\\nFifth line', 'old_content': 'Fourth line', 'new_content': 'Modified line'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.039215686274509796
+        },
+        "avg_similarity_score": 0.05142769537102354
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a sample text\\nIt contains multiple lines\\nPlease modify the text.', 'description': \"1. Delete 'It contains multiple lines' 2. Insert 'Note: This is a sample text' before 'Please modify the text.'\", 'modified_text': 'Note: This is a sample text\\nPlease modify the text.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'This is a sample text\\nIt contains multiple lines\\nPlease modify the text.', 'delete_content': 'It contains multiple lines'}, {'function_name': 'insert_before_line', 'line_content': 'Please modify the text.', 'insert_content': 'Note: This is a sample text'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.10169491525423728
+        },
+        "avg_similarity_score": 0.11076573302584322
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a test string\\nAnother test string\\nThird test string', 'description': \"1. Delete the first line 2. Replace 'Another' with 'Second'\", 'modified_text': 'Second test string\\nThird test string'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'This is a test string\\nAnother test string\\nThird test string', 'delete_content': 'This is a test string'}, {'function_name': 'replace_with_full_str', 'original_content': 'Another test string\\nThird test string', 'old_content': 'Another', 'new_content': 'Second'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.09090909090909091
+        },
+        "avg_similarity_score": 0.10811693247253301
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': \"import sys\\nimport os\\nimport re\\nimport math\", 'description': \"1. Insert 'import numpy' after 'import sys' 2. Delete 'import re' 3. Replace 'import math' with 'import statistics'\", 'modified_text': \"import sys\\nimport numpy\\nimport os\\nimport statistics\"}",
+        "output": "[{'function_name': 'insert_behind_line', 'line_content': 'import sys', 'insert_content': 'import numpy'}, {'function_name': 'delete_with_full_str', 'original_content': \"import sys\\nimport numpy\\nimport os\\nimport re\\nimport math\", 'delete_content': 'import re'}, {'function_name': 'replace_with_full_str', 'original_content': \"import sys\\nimport numpy\\nimport os\\nimport re\\nimport math\", 'old_content': 'import math', 'new_content': 'import statistics'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.039215686274509796
+        },
+        "avg_similarity_score": 0.057604448212095156
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Hello, my name is John.\\nI am a software engineer.\\nPlease update your profile.', 'description': \"1. Replace 'John' with 'Jane' 2. Insert 'Note: Ensure data is accurate.' before 'Please update your profile.'\", 'modified_text': 'Hello, my name is Jane.\\nI am a software engineer.\\nNote: Ensure data is accurate.\\nPlease update your profile.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'Hello, my name is John.\\nI am a software engineer.\\nPlease update your profile.', 'old_content': 'John', 'new_content': 'Jane'}, {'function_name': 'insert_before_line', 'line_content': 'Please update your profile.', 'insert_content': 'Note: Ensure data is accurate.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.029850746268656716
+        },
+        "avg_similarity_score": 0.029850746268656716
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a student.\\nI love to read books.\\nI also enjoy playing sports.', 'description': \"Replace 'I also enjoy playing sports.' with 'My favorite hobby is hiking.'\", 'modified_text': 'I am a student.\\nI love to read books.\\nMy favorite hobby is hiking.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I am a student.\\nI love to read books.\\nI also enjoy playing sports.', 'old_content': 'I also enjoy playing sports.', 'new_content': 'My favorite hobby is hiking.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.03508771929824561
+        },
+        "avg_similarity_score": 0.038127074442863916
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Today is Monday.\\nTomorrow is Tuesday.', 'description': \"1. Insert 'The day after tomorrow is Wednesday.' after 'Tomorrow is Tuesday.' 2. Replace 'Monday' with 'Tuesday'\", 'modified_text': 'Today is Tuesday.\\nThe day after tomorrow is Wednesday.'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'Today is Monday.\\nTomorrow is Tuesday.', 'line_content': 'Tomorrow is Tuesday.', 'insert_content': 'The day after tomorrow is Wednesday.'}, {'function_name': 'replace_with_full_str', 'original_content': 'Today is Monday.\\nTomorrow is Tuesday.', 'old_content': 'Monday', 'new_content': 'Tuesday'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.0816326530612245
+        },
+        "avg_similarity_score": 0.08524581412628678
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I like apples.\\nI like bananas.\\nI like oranges.', 'description': \"Replace all lines containing 'bananas' with 'I like strawberries.'\", 'modified_text': 'I like apples.\\nI like strawberries.\\nI like oranges.'}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'I like apples.\\nI like bananas.\\nI like oranges.', 'regex_str': 'I like bananas.', 'new_content': 'I like strawberries.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.045454545454545456
+        },
+        "avg_similarity_score": 0.05315348989893297
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a sample text.\\nPlease replace this line.\\nAnother sample line', 'description': \"1. Replace 'Please replace this line.' with 'This line has been replaced.' 2. Add a line 'New line added.' after 'Another sample line'\", 'modified_text': 'This is a sample text.\\nThis line has been replaced.\\nAnother sample line\\nNew line added.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'This is a sample text.\\nPlease replace this line.\\nAnother sample line', 'old_content': 'Please replace this line.', 'new_content': 'This line has been replaced.'}, {'function_name': 'insert_behind_line', 'original_content': 'This is a sample text.\\nThis line has been replaced.\\nAnother sample line', 'line_content': 'Another sample line', 'insert_content': 'New line added.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.029411764705882353
+        },
+        "avg_similarity_score": 0.0383334229882547
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I have a dog.\\nHe is a golden retriever.', 'description': \"1. Replace 'dog' with 'cat' 2. Delete 'He is a golden retriever.'\", 'modified_text': 'I have a cat.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I have a dog.\\nHe is a golden retriever.', 'old_content': 'dog', 'new_content': 'cat'}, {'function_name': 'delete_with_full_str', 'original_content': 'I have a cat.\\nHe is a golden retriever.', 'delete_content': 'He is a golden retriever.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.04761904761904761
+        },
+        "avg_similarity_score": 0.06363304753320606
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a test\\nPlease delete this line\\nThis is another test', 'description': \"1. Insert 'Note: This is a test.' after 'This is a test' 2. Delete 'Please delete this line'\", 'modified_text': 'This is a test\\nNote: This is a test.\\nThis is another test'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'This is a test\\nPlease delete this line\\nThis is another test', 'line_content': 'This is a test', 'insert_content': 'Note: This is a test.'}, {'function_name': 'delete_with_full_str', 'original_content': 'This is a test\\nPlease delete this line\\nThis is another test', 'delete_content': 'Please delete this line'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.03333333333333333
+        },
+        "avg_similarity_score": 0.0519188183664051
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'The sky is blue.\\nThe grass is green.\\nI love nature.', 'description': \"1. Delete the line 'The sky is blue.' 2. Replace 'I love nature.' with 'Nature is beautiful.'\", 'modified_text': 'The grass is green.\\nNature is beautiful.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'The sky is blue.\\nThe grass is green.\\nI love nature.', 'delete_content': 'The sky is blue.'}, {'function_name': 'replace_with_full_str', 'original_content': 'The sky is blue.\\nThe grass is green.\\nI love nature.', 'old_content': 'I love nature.', 'new_content': 'Nature is beautiful.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.11538461538461538
+        },
+        "avg_similarity_score": 0.12947151972984017
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'import numpy as np\\nimport pandas as pd\\nimport matplotlib.pyplot as plt', 'description': \"1. Add 'import seaborn as sns' after 'import matplotlib.pyplot as plt' 2. Replace 'import pandas as pd' with 'import pandas as pd, pd.DataFrame as df'\", 'modified_text': 'import numpy as np\\nimport pandas as pd, pd.DataFrame as df\\nimport matplotlib.pyplot as plt\\nimport seaborn as sns'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'import numpy as np\\nimport pandas as pd\\nimport matplotlib.pyplot as plt', 'line_content': 'import matplotlib.pyplot as plt', 'insert_content': 'import seaborn as sns'}, {'function_name': 'replace_with_full_str', 'original_content': 'import numpy as np\\nimport pandas as pd\\nimport matplotlib.pyplot as plt', 'old_content': 'import pandas as pd', 'new_content': 'import pandas as pd, pd.DataFrame as df'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.02564102564102564
+        },
+        "avg_similarity_score": 0.03796494701995486
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Welcome to our store.\\nWe have a variety of products available.\\nPlease let us know if you need any assistance.', 'description': \"1. Delete the line 'We have a variety of products available.' 2. Replace 'store' with 'shop' 3. Insert 'Thank you for choosing us.' after 'Welcome to our shop.'\", 'modified_text': 'Welcome to our shop.\\nThank you for choosing us.\\nPlease let us know if you need any assistance.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'Welcome to our store.\\nWe have a variety of products available.\\nPlease let us know if you need any assistance.', 'delete_content': 'We have a variety of products available.'}, {'function_name': 'replace_with_full_str', 'original_content': 'Welcome to our shop.\\nWe have a variety of products available.\\nPlease let us know if you need any assistance.', 'old_content': 'store', 'new_content': 'shop'}, {'function_name': 'insert_behind_line', 'original_content': 'Welcome to our shop.\\nWe have a variety of products available.\\nPlease let us know if you need any assistance.', 'line_content': 'Welcome to our shop.', 'insert_content': 'Thank you for choosing us.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.04819277108433735
+        },
+        "avg_similarity_score": 0.061850571482511274
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a sentence.\\nThis is another sentence.\\nAnd this is the last sentence.', 'description': \"Replace all instances of 'sentence' with 'phrase'\", 'modified_text': 'I am a phrase.\\nThis is another phrase.\\nAnd this is the last phrase.'}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'I am a sentence.\\nThis is another sentence.\\nAnd this is the last sentence.', 'regex_str': 'sentence', 'new_content': 'phrase'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.13207547169811318
+        },
+        "avg_similarity_score": 0.09882343694069656
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I have a dream\\nThat one day this nation will rise up\\nAnd live out the true meaning of its creed', 'description': \"Replace 'I have a dream' with 'I had a dream'\", 'modified_text': 'I had a dream\\nThat one day this nation will rise up\\nAnd live out the true meaning of its creed'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I have a dream\\nThat one day this nation will rise up\\nAnd live out the true meaning of its creed', 'old_content': 'I have a dream', 'new_content': 'I had a dream'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.1607142857142857
+        },
+        "avg_similarity_score": 0.07770296468897304
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am going to the store.\\nI am buying groceries.\\nI am cooking dinner.', 'description': \"1. Replace 'I am' with 'She is' in the first two lines 2. Delete the last line\", 'modified_text': 'She is going to the store.\\nShe is buying groceries.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I am going to the store.\\nI am buying groceries.\\nI am cooking dinner.', 'old_content': 'I am', 'new_content': 'She is'}, {'function_name': 'delete_with_full_str', 'original_content': 'She is going to the store.\\nShe is buying groceries.\\nI am cooking dinner.', 'delete_content': 'I am cooking dinner.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.21359223300970873
+        },
+        "avg_similarity_score": 0.12426943733470378
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a student.\\nI am studying computer science.', 'description': \"1. Replace 'student' with 'teacher' 2. Insert 'Note: Remember to submit your assignments.' after 'I am studying computer science.'\", 'modified_text': 'I am a teacher.\\nI am studying computer science.\\nNote: Remember to submit your assignments.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I am a student.\\nI am studying computer science.', 'old_content': 'student', 'new_content': 'teacher'}, {'function_name': 'insert_behind_line', 'line_content': 'I am studying computer science.', 'insert_content': 'Note: Remember to submit your assignments.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.20454545454545456
+        },
+        "avg_similarity_score": 0.06766572640661224
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am happy.\\nI am sad.\\nI am angry.', 'description': \"1. Replace all lines starting with 'I am' with 'I feel' 2. Insert 'Note: Emotions are subjective.' before 'I feel angry.'\", 'modified_text': \"I feel happy.\\nI feel sad.\\nNote: Emotions are subjective.\\nI feel angry.\"}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'I am happy.\\nI am sad.\\nI am angry.', 'regex_str': '^I am.*', 'new_content': 'I feel'}, {'function_name': 'insert_before_line', 'line_content': 'I feel angry.', 'insert_content': 'Note: Emotions are subjective.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.18823529411764706
+        },
+        "avg_similarity_score": 0.06910224243943659
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Welcome to our team.\\nPlease report to the manager.\\nHave a great day.', 'description': \"Add a line 'Orientation is on Monday.' after 'Welcome to our team.' and replace 'manager' with 'supervisor'\", 'modified_text': 'Welcome to our team.\\nOrientation is on Monday.\\nPlease report to the supervisor.\\nHave a great day.'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'Welcome to our team.\\nPlease report to the manager.\\nHave a great day.', 'line_content': 'Welcome to our team.', 'insert_content': 'Orientation is on Monday.'}, {'function_name': 'replace_with_full_str', 'original_content': 'Welcome to our team.\\nPlease report to the manager.\\nHave a great day.', 'old_content': 'manager', 'new_content': 'supervisor'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2
+        },
+        "avg_similarity_score": 0.11344767409806801
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'The quick brown fox jumps over the lazy dog', 'description': \"1. Insert 'The quick brown fox' before 'jumps over the lazy dog' 2. Delete 'brown'\", 'modified_text': 'The quick fox jumps over the lazy dog'}",
+        "output": "[{'function_name': 'insert_before_line', 'line_content': 'jumps over the lazy dog', 'insert_content': 'The quick brown fox'}, {'function_name': 'delete_with_full_str', 'original_content': 'The quick brown fox jumps over the lazy dog', 'delete_content': 'brown'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.15730337078651685
+        },
+        "avg_similarity_score": 0.13437600291975976
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love coding.\\nIt is my passion.', 'description': \"Delete the line 'I love coding.'\", 'modified_text': 'It is my passion.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'I love coding.\\nIt is my passion.', 'delete_content': 'I love coding.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.20338983050847456
+        },
+        "avg_similarity_score": 0.1392652420399541
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'First line\\nSecond line\\nThird line\\nFourth line\\nFifth line', 'description': \"1. Replace all lines containing 'line' with 'line = 'removed'' 2. Insert 'Note: Ensure data is current.' before 'Fourth line'\", 'modified_text': 'First line = 'removed'\\nSecond line = 'removed'\\nThird line = 'removed'\\nNote: Ensure data is current.\\nFourth line = 'removed'\\nFifth line = 'removed''\"}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'First line\\nSecond line\\nThird line\\nFourth line\\nFifth line', 'regex_str': \".*line.*\", 'new_content': \".*line = 'removed'.*\"}, {'function_name': 'insert_before_line', 'line_content': 'Fourth line', 'insert_content': 'Note: Ensure data is current.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.1978021978021978
+        },
+        "avg_similarity_score": 0.06640787180372092
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am learning Python.\\nIt is a great programming language.', 'description': \"Insert 'Python is easy to learn.' after 'I am learning Python.'\", 'modified_text': 'I am learning Python.\\nPython is easy to learn.\\nIt is a great programming language.'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'I am learning Python.\\nIt is a great programming language.', 'line_content': 'I am learning Python.', 'insert_content': 'Python is easy to learn.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.24691358024691357
+        },
+        "avg_similarity_score": 0.08038263720387592
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am going on a trip.\\nI will be back in 2 weeks.', 'description': \"1. Delete 'I am going on a trip.' 2. Insert 'I am going on a vacation.' before 'I will be back in 2 weeks.'\", 'modified_text': 'I am going on a vacation.\\nI will be back in 2 weeks.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'I am going on a trip.\\nI will be back in 2 weeks.', 'delete_content': 'I am going on a trip.'}, {'function_name': 'insert_before_line', 'line_content': 'I will be back in 2 weeks.', 'insert_content': 'I am going on a vacation.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2298850574712644
+        },
+        "avg_similarity_score": 0.07311253261941436
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am a sentence.\\nI am another sentence.\\nI am the third sentence.', 'description': \"1. Add 'I am the fourth sentence.' after 'I am the third sentence.' 2. Replace 'I am another sentence.' with 'I am not a sentence.'\", 'modified_text': 'I am a sentence.\\nI am not a sentence.\\nI am the third sentence.\\nI am the fourth sentence.'}",
+        "output": "[{'function_name': 'insert_behind_line', 'line_content': 'I am the third sentence.', 'insert_content': 'I am the fourth sentence.'}, {'function_name': 'replace_with_full_str', 'original_content': 'I am a sentence.\\nI am another sentence.\\nI am the third sentence.\\nI am the fourth sentence.', 'old_content': 'I am another sentence.', 'new_content': 'I am not a sentence.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.27184466019417475
+        },
+        "avg_similarity_score": 0.12083737378879622
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Hello, world!\\nThis is a test.\\nThis is a new line.\\nThis is the last line.', 'description': \"1. Delete all lines containing 'This is' 2. Insert 'Goodbye, world!' before 'Hello, world!'\", 'modified_text': 'Goodbye, world!'}",
+        "output": "[{'function_name': 'delete_with_regex', 'original_content': 'Hello, world!\\nThis is a test.\\nThis is a new line.\\nThis is the last line.', 'regex_str': '.*This is.*'}, {'function_name': 'insert_before_line', 'line_content': 'Hello, world!', 'insert_content': 'Goodbye, world!'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.24324324324324326
+        },
+        "avg_similarity_score": 0.11769769424239893
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': \"This is a sample text.\\nIt contains some numbers like 12345 and 67890.\", 'description': \"1. Replace all numbers with '***' 2. Insert 'Note: This text contains sensitive information.' before 'This is a sample text.'\", 'modified_text': \"Note: This text contains sensitive information.\\n***\\nIt contains some numbers like *** and ***.\"}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': \"This is a sample text.\\nIt contains some numbers like 12345 and 67890.\", 'regex_str': \"[0-9]+\", 'new_content': '***'}, {'function_name': 'insert_before_line', 'line_content': 'This is a sample text.', 'insert_content': 'Note: This text contains sensitive information.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.24390243902439027
+        },
+        "avg_similarity_score": 0.07863722333917389
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'There are 5 apples on the table.\\nI want to eat 3 apples.', 'description': \"Replace '5' with '10' and '3' with '8'\", 'modified_text': 'There are 10 apples on the table.\\nI want to eat 8 apples.'}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'There are 5 apples on the table.\\nI want to eat 3 apples.', 'regex_str': '[0-9]', 'new_content': '10'}, {'function_name': 'replace_with_regex', 'original_content': 'There are 5 apples on the table.\\nI want to eat 3 apples.', 'regex_str': '[0-9]', 'new_content': '8'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.19801980198019803
+        },
+        "avg_similarity_score": 0.13686387205406134
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'The meeting will be held on Monday at 2pm.\\nPlease be on time.', 'description': \"1. Replace 'Monday' with 'Tuesday' 2. Delete the line containing 'Please be on time.'\", 'modified_text': 'The meeting will be held on Tuesday at 2pm.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'The meeting will be held on Monday at 2pm.\\nPlease be on time.', 'old_content': 'Monday', 'new_content': 'Tuesday'}, {'function_name': 'delete_with_full_str', 'original_content': 'The meeting will be held on Monday at 2pm.\\nPlease be on time.', 'delete_content': 'Please be on time.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.22680412371134023
+        },
+        "avg_similarity_score": 0.16868475520764445
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Hello, how are you?\\nI am doing well, thank you.', 'description': \"1. Insert 'I am an AI assistant.' after 'Hello, how are you?' 2. Replace 'well' with 'great'\", 'modified_text': 'Hello, how are you?\\nI am an AI assistant.\\nI am doing great, thank you.'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'Hello, how are you?\\nI am doing well, thank you.', 'line_content': 'Hello, how are you?', 'insert_content': 'I am an AI assistant.'}, {'function_name': 'replace_with_full_str', 'original_content': 'I am doing well, thank you.', 'old_content': 'well', 'new_content': 'great'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.23655913978494622
+        },
+        "avg_similarity_score": 0.08229876074776044
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': \"Hello, world!\\nThis is a sample text.\\nPlease make sure to review it.\", 'description': \"1. Replace 'Hello, world!' with 'Hi, there!' 2. Delete 'Please make sure to review it.'\", 'modified_text': \"Hi, there!\\nThis is a sample text.\"}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': \"Hello, world!\\nThis is a sample text.\\nPlease make sure to review it.\", 'old_content': 'Hello, world!', 'new_content': 'Hi, there!'}, {'function_name': 'delete_with_full_str', 'original_content': \"Hello, world!\\nThis is a sample text.\\nPlease make sure to review it.\", 'delete_content': 'Please make sure to review it.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2727272727272727
+        },
+        "avg_similarity_score": 0.09689152378330892
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Please enter your username.\\nPlease enter your password.', 'description': \"1. Delete the first line 2. Replace all instances of 'password' with 'password = 'redacted''\", 'modified_text': 'Please enter your password = 'redacted''}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'Please enter your username.\\nPlease enter your password.', 'delete_content': 'Please enter your username.\\n'}, {'function_name': 'replace_with_regex', 'original_content': 'Please enter your password.', 'regex_str': \"password = '.*'\", 'new_content': \"password = 'redacted'\"}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.25
+        },
+        "avg_similarity_score": 0.12940231233343827
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a test string\\nAnother test string\\nThird test string', 'description': \"1. Insert 'Inserted line' before 'Third test string' 2. Replace 'test' with 'exam' in all lines\", 'modified_text': 'This is a exam string\\nAnother exam string\\nInserted line\\nThird exam string'}",
+        "output": "[{'function_name': 'insert_before_line', 'line_content': 'Third test string', 'insert_content': 'Inserted line'}, {'function_name': 'replace_with_regex', 'original_content': 'This is a test string\\nAnother test string\\nInserted line\\nThird test string', 'regex_str': 'test', 'new_content': 'exam'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2588235294117647
+        },
+        "avg_similarity_score": 0.09290039350012165
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love to travel.\\nI have been to many countries.\\nMy favorite place is Japan.', 'description': \"1. Replace 'travel' with 'explore' 2. Delete the line 'I have been to many countries.'\", 'modified_text': 'I love to explore.\\nMy favorite place is Japan.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I love to travel.\\nI have been to many countries.\\nMy favorite place is Japan.', 'old_content': 'travel', 'new_content': 'explore'}, {'function_name': 'delete_with_full_str', 'original_content': 'I love to travel.\\nI have been to many countries.\\nMy favorite place is Japan.', 'delete_content': 'I have been to many countries.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.28235294117647053
+        },
+        "avg_similarity_score": 0.12608371670219015
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Welcome to our company.\\nPlease fill out the form below.\\nName: John\\nAge: 25\\nPosition: Manager', 'description': \"1. Replace 'John' with 'Jane' 2. Delete the line 'Age: 25'\", 'modified_text': 'Welcome to our company.\\nPlease fill out the form below.\\nName: Jane\\nPosition: Manager'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'Welcome to our company.\\nPlease fill out the form below.\\nName: John\\nAge: 25\\nPosition: Manager', 'old_content': 'John', 'new_content': 'Jane'}, {'function_name': 'delete_with_regex', 'original_content': 'Welcome to our company.\\nPlease fill out the form below.\\nName: Jane\\nAge: 25\\nPosition: Manager', 'regex_str': 'Age: [0-9]*'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2558139534883721
+        },
+        "avg_similarity_score": 0.1396680595349063
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love hiking in the mountains.\\nIt is a great way to stay active and enjoy nature.', 'description': \"Delete the line 'It is a great way to stay active and enjoy nature.'\", 'modified_text': 'I love hiking in the mountains.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'I love hiking in the mountains.\\nIt is a great way to stay active and enjoy nature.', 'delete_content': 'It is a great way to stay active and enjoy nature.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.24096385542168675
+        },
+        "avg_similarity_score": 0.14645503387714698
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I am learning Python.\\nI am enjoying it so far.', 'description': \"Delete all lines containing 'enjoying'\", 'modified_text': 'I am learning Python.'}",
+        "output": "[{'function_name': 'delete_with_regex', 'original_content': 'I am learning Python.\\nI am enjoying it so far.', 'regex_str': '.*enjoying.*'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2857142857142857
+        },
+        "avg_similarity_score": 0.11103350884950464
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love to eat pizza\\nI also love to eat pasta', 'description': \"1. Insert 'I love to eat burgers' after the first line 2. Replace 'pasta' with 'sushi'\", 'modified_text': 'I love to eat pizza\\nI love to eat burgers\\nI also love to eat sushi'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'I love to eat pizza\\nI also love to eat pasta', 'line_content': 'I love to eat pizza', 'insert_content': 'I love to eat burgers'}, {'function_name': 'replace_with_full_str', 'original_content': 'I love to eat pizza\\nI also love to eat pasta', 'old_content': 'pasta', 'new_content': 'sushi'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2916666666666667
+        },
+        "avg_similarity_score": 0.12219332473584076
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a sample text\\nIt contains multiple lines\\nTo be used for testing purposes', 'description': \"1. Insert 'New line' before 'To be used for testing purposes' 2. Delete 'It contains multiple lines'\", 'modified_text': 'This is a sample text\\nNew line\\nTo be used for testing purposes'}",
+        "output": "[{'function_name': 'insert_before_line', 'line_content': 'To be used for testing purposes', 'insert_content': 'New line'}, {'function_name': 'delete_with_full_str', 'original_content': 'This is a sample text\\nNew line\\nTo be used for testing purposes', 'delete_content': 'It contains multiple lines'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.22988505747126436
+        },
+        "avg_similarity_score": 0.0925972526179166
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a long sentence that needs to be shortened.', 'description': 'Replace all words with more than 5 characters with their first 3 letters', 'modified_text': 'Thi is a lon sen tha nee to be sho.'}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'This is a long sentence that needs to be shortened.', 'regex_str': '\\w{5,}', 'new_content': lambda match: match.group(0)[:3]}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2553191489361702
+        },
+        "avg_similarity_score": 0.10231238992506204
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Today is a good day.\\nI am feeling happy.', 'description': \"1. Replace 'good' with 'great' 2. Insert 'I am having a great time.' after 'I am feeling happy.'\", 'modified_text': 'Today is a great day.\\nI am feeling happy.\\nI am having a great time.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'Today is a good day.\\nI am feeling happy.', 'old_content': 'good', 'new_content': 'great'}, {'function_name': 'insert_behind_line', 'original_content': 'Today is a great day.\\nI am feeling happy.', 'line_content': 'I am feeling happy.', 'insert_content': 'I am having a great time.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.2988505747126437
+        },
+        "avg_similarity_score": 0.11038809949855632
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Welcome to our website.\\nPlease sign up to access exclusive content.\\nThank you for choosing us!', 'description': \"1. Replace 'sign up' with 'register' 2. Delete 'Thank you for choosing us!'\", 'modified_text': 'Welcome to our website.\\nPlease register to access exclusive content.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'Welcome to our website.\\nPlease sign up to access exclusive content.\\nThank you for choosing us!', 'old_content': 'sign up', 'new_content': 'register'}, {'function_name': 'delete_with_full_str', 'original_content': 'Welcome to our website.\\nPlease register to access exclusive content.\\nThank you for choosing us!', 'delete_content': 'Thank you for choosing us!'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.23684210526315788
+        },
+        "avg_similarity_score": 0.09727814656023279
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love coding.\\nI am a software engineer.', 'description': \"Replace 'I am a software engineer.' with 'I am a data scientist.'\", 'modified_text': 'I love coding.\\nI am a data scientist.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'I love coding.\\nI am a software engineer.', 'old_content': 'I am a software engineer.', 'new_content': 'I am a data scientist.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.35616438356164376
+        },
+        "avg_similarity_score": 0.12494275649234188
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love to read.\\nReading is my favorite hobby.\\nI have a book club with my friends.', 'description': \"Replace all instances of 'read' with 'write'\", 'modified_text': 'I love to write.\\nWriting is my favorite hobby.\\nI have a book club with my friends.'}",
+        "output": "[{'function_name': 'replace_with_regex', 'original_content': 'I love to read.\\nReading is my favorite hobby.\\nI have a book club with my friends.', 'regex_str': 'read', 'new_content': 'write'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.27586206896551724
+        },
+        "avg_similarity_score": 0.10842865733646474
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a sample text.\\nPlease make the following changes:\\n1. Replace 'sample' with 'modified'\\n2. Delete 'Please make the following changes:'\\n3. Add a line 'Thank you for your cooperation.' at the end', 'description': \"1. Replace 'sample' with 'modified'\\n2. Delete 'Please make the following changes:'\\n3. Add a line 'Thank you for your cooperation.' at the end\", 'modified_text': 'This is a modified text.\\nThank you for your cooperation.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'This is a sample text.\\nPlease make the following changes:\\n1. Replace 'sample' with 'modified'\\n2. Delete 'Please make the following changes:'\\n3. Add a line 'Thank you for your cooperation.' at the end', 'old_content': 'sample', 'new_content': 'modified'}, {'function_name': 'delete_with_full_str', 'original_content': 'This is a modified text.\\nPlease make the following changes:\\n1. Replace 'sample' with 'modified'\\n2. Delete 'Please make the following changes:'\\n3. Add a line 'Thank you for your cooperation.' at the end', 'delete_content': 'Please make the following changes:'}, {'function_name': 'insert_behind_line', 'original_content': 'This is a modified text.\\nPlease make the following changes:\\n1. Replace 'sample' with 'modified'\\n2. Delete 'Please make the following changes:'\\n3. Add a line 'Thank you for your cooperation.' at the end', 'line_content': 'Please make the following changes:', 'insert_content': 'Thank you for your cooperation.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.25
+        },
+        "avg_similarity_score": 0.1208859170142958
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': \"Welcome to our website!\\nPlease enter your username and password to login.\", 'description': \"1. Insert 'Note: Password must be at least 8 characters long.' after 'Please enter your username and password to login.' 2. Replace 'website' with 'platform'\", 'modified_text': \"Welcome to our platform!\\nPlease enter your username and password to login.\\nNote: Password must be at least 8 characters long.\"}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': \"Welcome to our website!\\nPlease enter your username and password to login.\", 'old_content': 'website', 'new_content': 'platform'}, {'function_name': 'insert_after_line', 'original_content': \"Welcome to our website!\\nPlease enter your username and password to login.\", 'line_content': 'Please enter your username and password to login.', 'insert_content': 'Note: Password must be at least 8 characters long.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.21153846153846154
+        },
+        "avg_similarity_score": 0.08630848380882661
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'The sky is blue.\\nRoses are red.\\nViolets are blue.', 'description': \"1. Replace 'blue' with 'green' in the first line 2. Delete the second line\", 'modified_text': 'The sky is green.\\nViolets are blue.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'The sky is blue.\\nRoses are red.\\nViolets are blue.', 'old_content': 'blue', 'new_content': 'green'}, {'function_name': 'delete_with_regex', 'original_content': 'The sky is green.\\nRoses are red.\\nViolets are blue.', 'regex_str': 'Roses.*'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.125
+        },
+        "avg_similarity_score": 0.125
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I love to eat pizza.\\nI also love to eat burgers.\\nI love to eat ice cream.', 'description': \"Delete all lines containing 'love'\", 'modified_text': 'I also love to eat burgers.'}",
+        "output": "[{'function_name': 'delete_with_regex', 'original_content': 'I love to eat pizza.\\nI also love to eat burgers.\\nI love to eat ice cream.', 'regex_str': \".*love.*\"}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.04444444444444444
+        },
+        "avg_similarity_score": 0.04555101366695568
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'I have a dream that one day this nation will rise up and live out the true meaning of its creed.', 'description': \"1. Insert 'I have a dream' before 'that one day this nation will rise up' 2. Delete 'and live out the true meaning of its creed.'\", 'modified_text': 'I have a dream that one day this nation will rise up.'}",
+        "output": "[{'function_name': 'insert_before_line', 'original_content': 'I have a dream that one day this nation will rise up and live out the true meaning of its creed.', 'line_content': 'that one day this nation will rise up', 'insert_content': 'I have a dream'}, {'function_name': 'delete_with_full_str', 'original_content': 'I have a dream that one day this nation will rise up and live out the true meaning of its creed.', 'delete_content': 'and live out the true meaning of its creed.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.05263157894736842
+        },
+        "avg_similarity_score": 0.054832301792398154
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'This is a test\\nThis is another test\\nThis is a third test', 'description': \"Insert 'This is a fourth test' after 'This is another test'\", 'modified_text': 'This is a test\\nThis is another test\\nThis is a fourth test\\nThis is a third test'}",
+        "output": "[{'function_name': 'insert_behind_line', 'original_content': 'This is a test\\nThis is another test\\nThis is a third test', 'line_content': 'This is another test', 'insert_content': 'This is a fourth test\\n'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.03389830508474576
+        },
+        "avg_similarity_score": 0.03702569973786445
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Welcome to our website.\\nPlease sign up to access exclusive content.\\nThank you for choosing us.', 'description': \"1. Replace 'website' with 'platform' 2. Insert 'Note: Please check your email for verification.' after 'Please sign up to access exclusive content.'\", 'modified_text': 'Welcome to our platform.\\nPlease sign up to access exclusive content.\\nNote: Please check your email for verification.\\nThank you for choosing us.'}",
+        "output": "[{'function_name': 'replace_with_full_str', 'original_content': 'Welcome to our website.\\nPlease sign up to access exclusive content.\\nThank you for choosing us.', 'old_content': 'website', 'new_content': 'platform'}, {'function_name': 'insert_behind_line', 'original_content': 'Welcome to our platform.\\nPlease sign up to access exclusive content.\\nThank you for choosing us.', 'line_content': 'Please sign up to access exclusive content.', 'insert_content': 'Note: Please check your email for verification.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.02564102564102564
+        },
+        "avg_similarity_score": 0.02991821402805266
+    },
+    {
+        "instruction": "Perform the specified edits on the original texts using the described functions.",
+        "input": "{'original_text': 'Hello, my name is John.\\nI am a software engineer.\\nI enjoy coding and problem solving.', 'description': \"1. Delete 'Hello, my name is John.' 2. Replace 'software engineer' with 'data scientist' 3. Add a line 'I also have experience in machine learning.' after 'I enjoy coding and problem solving.'\", 'modified_text': 'I am a data scientist.\\nI enjoy coding and problem solving.\\nI also have experience in machine learning.'}",
+        "output": "[{'function_name': 'delete_with_full_str', 'original_content': 'Hello, my name is John.\\nI am a software engineer.\\nI enjoy coding and problem solving.', 'delete_content': 'Hello, my name is John.'}, {'function_name': 'replace_with_full_str', 'original_content': 'I am a software engineer.\\nI enjoy coding and problem solving.', 'old_content': 'software engineer', 'new_content': 'data scientist'}, {'function_name': 'insert_behind_line', 'original_content': 'I am a data scientist.\\nI enjoy coding and problem solving.', 'line_content': 'I enjoy coding and problem solving.', 'insert_content': 'I also have experience in machine learning.'}]",
+        "most_similar_instructions": {
+            "Perform the specified edits on the original texts using the described functions.": 0.024096385542168676
+        },
+        "avg_similarity_score": 0.030453094503489993
+    }
+]
