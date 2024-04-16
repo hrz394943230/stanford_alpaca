@@ -194,7 +194,7 @@ def generate_instruction_following_data(
             most_similar_instructions = {
                 all_instructions[i]: rouge_scores[i] for i in np.argsort(rouge_scores)[-10:][::-1]
             }
-            if max(rouge_scores) > 0.2:
+            if max(rouge_scores) > 0.8:
                 continue
             else:
                 keep += 1
