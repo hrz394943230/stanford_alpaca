@@ -1,5 +1,5 @@
 import re
-from typing import List
+
 
 def insert_before_line(original_content, line_content, insert_content):
     lines = original_content.split('\n')
@@ -101,6 +101,7 @@ def execute_function_sequence(function_calls):
         current_content = call_function_by_name(func_name, **kwargs)
 
     return current_content
+
 
 if __name__ == "__main__":
 
