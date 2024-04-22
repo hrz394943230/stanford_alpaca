@@ -4337,26 +4337,6 @@
         "modified_text": "夜幕降临，星空璀璨，乌云密布的天空熠熠生辉，繁星闪烁。\n远方传来刺耳的机器噪音，如同自然交响曲在夜空中回荡。\n断裂的树枝婆娑，微风拂过，似乎散发着宁静的魅力。\n闪烁的霓虹光洒在大地上，投下斑驳的光影。"
     },
     {
-        "original_text": "夜幕降临，星空璀璨，月光洒落在湖面上。\n湖水微波荡漾，轻风拂面，夜莺鸣叫。",
-        "description": "1. 将星空描述更详细，增加一些星座的提及。\n2. 描绘湖水更生动，增加一些涟漪细节。\n3. 增加一句表达夜莺歌声的内容。",
-        "modified_text": "夜幕降临，璀璨的星空中，天狼星和北斗七星分外明亮，月光银白，如水铺在湖面上。\n湖水微波荡漾，涟漪荡漾之际，一群水鸟掠过，荡起层层涟漪，轻风吹拂湖畔柳树婆娑，夜莺在树上高歌不停。",
-        "sets": [
-            {
-                "original_text": "春风拂面，花香盈怀，小溪潺潺流过山间。\n雨后蝉鸣，蝶舞轻盈，阳光透过树叶洒落。",
-                "description": "1. 为春风增添一些柔和的描述词。\n2. 描述小溪中生物的活动，如鱼游动或水草摇曳。\n3. 添加一些与蝉鸣相关的景物描述。",
-                "modified_text": "春风轻轻拂面，柔软如丝，花香扑鼻，小溪潺潺，碧波荡漾。鱼儿嬉戏，水草随风摇曳，欢快的蝉鸣伴随着雨后清新的空气，蝴蝶翩翩起舞，阳光透过层层树叶，斑驳的光影洒落，构成一幅和谐的画面。",
-                "sets": [
-                    {
-                        "original_text": "夜色渐深，寂静无声，星星点点布满天际。\n灯火辉煌，窗外闪烁，一缕月光洒在庭院里。\n",
-                        "description": "1. 增加对夜晚氛围的描绘，如夜虫鸣叫等。\n2. 对灯火辉煌进行更详细的描述，包括对窗外景色的描绘。\n3. 增加庭院里的花草、树木等描写。",
-                        "modified_text": "夜色渐深，寂静无声，星空湛蓝，繁星点缀，夜虫低吟。灯火辉煌，窗外点点明灯，闪烁不定，一缕月光洒在庭院里，映照着茂盛的花草，小鸟归巢，默默无言。",
-                        "sets": []
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "original_text": "John eagerly opened the package he received in the mail.\nInside, he found a handwritten letter and a mysterious key.\nExcitement surged through him as he read the message.",
         "description": "1. Replaced 'John' with 'Emma' to change the character name.\n2. Adjusted 'package' to 'parcel' for variation in vocabulary.\n3. Inserted a sentence to reveal the key's unknown origin and purpose.",
         "modified_text": "Emma eagerly opened the parcel she received in the mail.\nInside, she found a handwritten letter and a mysterious key.\nExcitement surged through her as she read the message and wondered about the key's unknown origin and purpose."
@@ -5034,10 +5014,5 @@
         "original_text": "在一座古老的城市里，流传着许多神奇的传说和故事。\n每当夜幕降临，城市的街巷中便会传来美妙的歌声。\n晨曦中的阳光透过窗户洒进房间，唤醒了沐浴在梦乡中的居民。",
         "description": "1. 删除了第二行描述夜晚歌声的内容。\n2. 修改第三行使阳光不再唤醒居民，而是带来一种安详的氛围。",
         "modified_text": "在一座古老的城市里，流传着许多神奇的传说和故事。\n晨曦中的阳光洒进房间，营造出安详的氛围。"
-    },
-    {
-        "original_text": "月光洒在湖面，波光粼粼，宛如银河倒影一般。\n林间传来微风拂动树叶的沙沙声，宁静而美好。\n夜晚的湖边，静谧的气息扑面而来，让人感受到大自然的神秘之美。",
-        "description": "1. 调整了第一行描述月光洒在湖面的语境，不再用“银河倒影一般”比喻。\n2. 改变第三行感受大自然美的方式，增加一些神秘元素。",
-        "modified_text": "月光柔和地洒在湖泊上，波光粼粼，反射着湖中的花卉。\n夜晚的湖边，弥漫着神秘的气息，让人感受到大自然的奥秘之美。"
     }
 ]
