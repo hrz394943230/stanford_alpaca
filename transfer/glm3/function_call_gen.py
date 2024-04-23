@@ -1,24 +1,27 @@
 import difflib
 import json
 
-from utils import tools,client
+from utils import tools,client,pretty_print_conversation
 from tools import execute_function_calls
 
-def get_answer(filepath,model_name,tools):
-    with open(filepath,encoding="utf-8") as f:
+
+def get_answer(filepath, model_name, tools, client):
+    with open(filepath, encoding="utf-8") as f:
         data = json.load(f)
         original_text = data[0]["original_text"]
         description = data[0]["description"]
         modified_text = data[0]["modified_text"]
-        print(original_text,description)
-        messages= []
-        messages.append({"role": "system",
-                         "content": "Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous."})
-        messages.append({"role": "user",
-                         "content": "Use the function I give to edit the original_text based on description \n" +
-                         "original_text:" + original_text +"\n" +
-                         "description:" + description})
 
+    current_text = original_text
+    messages = []
+    messages.append({"role": "system",
+                     "content": "In the first time take original_text as original_text,the rest of times the current_text as original_text for tools,remember to save the line break."})
+    messages.append({"role": "user",
+                     "content": f"Use the function I give to edit the original_text based on description \noriginal_text:{original_text}\ndescription:{description}"})
+
+    loop_count = 0
+    while current_text != modified_text:
+        print("loop:" + str(loop_count))
         chat_response = client.chat.completions.create(
             messages=messages,
             model=model_name,
@@ -26,52 +29,39 @@ def get_answer(filepath,model_name,tools):
         )
         assistant_message = chat_response.choices[0].message
         tool_calls = assistant_message.tool_calls
+        print(tool_calls)
+
         if tool_calls:
             for tool_call in tool_calls:
                 function_name = tool_call.function.name
                 function_args = json.loads(tool_call.function.arguments)
                 function_args["function_name"] = function_name
-                current_text = execute_function_calls([function_args])
-                messages.append(
-                    {
-                        "tool_call_id": tool_call.id,
-                        "role": "tool",
-                        "name": function_name,
-                        "content": current_text,
-                    }
-                )
+                current_text = execute_function_calls([function_args])  # This needs to be a defined function
+                messages.append({
+                    "tool_call_id": tool_call.id,
+                    "role": "function",
+                    "name": function_name,
+                    "content": current_text,
+                })
 
-                # 初始化计数器
-                loop_count = 0
+        if current_text != modified_text:
+            d = difflib.Differ()
+            diff = list(d.compare(modified_text.splitlines(), current_text.splitlines()))
+            diff_str = '\n'.join(diff)
+            messages.append({
+                "role": "user",
+                "content": "There is still some difference, here is the diff between current_text and target_text: \n" + diff_str +"\n" +
+                            "here is the current_text: \n" + current_text,
+            })
+        else:
+            print("mission complete!")
+            break
 
-                # 开始死循环
-                while True:
-                    if current_text == modified_text:
-                        print("make it")
-                        break
-                    else:
-                        # 使用Differ进行比较
-                        d = difflib.Differ()
-                        diff = list(d.compare(modified_text.splitlines(), current_text.splitlines()))
-                        messages.append(
-                            {
-                                "role": "user",
-                                "content":"there is still some difference, here is the diff between current_text and modified_text: \n "+
-                                diff. ,
-                                "tools":tools
-                            }
-                        )
-                        print(diff)
-
-                    # 更新计数器
-                    loop_count += 1
-
-                    # 检查是否达到循环次数限制
-                    if loop_count > 5:
-                        print("Looped more than 5 times, exiting...")
-                        break
-                print(messages)
-
+        loop_count += 1
+        if loop_count > 5:
+            print("Looped more than 5 times, exiting...")
+            break
+    pretty_print_conversation(messages)
 
 
 
@@ -80,5 +70,5 @@ def get_answer(filepath,model_name,tools):
 
 if __name__ =="__main__":
     filepath = r"regen.json"
-    model_name= "gpt-4"
-    get_answer(filepath,model_name,tools)
+    model_name= "gpt-3.5-turbo-1106"
+    get_answer(filepath,model_name,tools,client)

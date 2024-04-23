@@ -153,7 +153,7 @@ tools = [
 
 api_base = "https://api.openai-proxy.org/v1"
 api_key = "sk-oMCjsBS2Osp5lTABMu0Sh41QTE78nmVB8OqsEUSWUxLZ2QM6"
-GPT_MODEL = "gpt-3.5-turbo-0125"
+GPT_MODEL = "gpt-4-1106-preview"
 client = OpenAI(
     api_key = api_key,
     base_url=api_base
