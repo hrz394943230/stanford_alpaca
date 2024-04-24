@@ -12,6 +12,7 @@ def read_json_file(file_path):
                 count = count +1
                 new_data.append(entry)
         with open("data/gen_with_id.json","w",encoding='utf-8') as file1:
+            json.dump(new_data, file1, ensure_ascii=False, indent=4)
 
             return data
     except FileNotFoundError:
@@ -34,6 +35,5 @@ def write_json_data(data, file_path):
 # 示例用法
 file_path = 'regen.json'  # 替换为实际的文件路径
 data = read_json_file(file_path)
-write_path = 'regen1.json'
 write_json_data(data,file_path)
 
