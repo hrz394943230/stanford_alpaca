@@ -5,6 +5,14 @@ def read_json_file(file_path):
         with open(file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
             print("Data loaded successfully!")
+            new_data =[]
+            count = 1
+            for entry in data:
+                entry["id"] =count
+                count = count +1
+                new_data.append(entry)
+        with open("data/gen_with_id.json","w",encoding='utf-8') as file1:
+
             return data
     except FileNotFoundError:
         print(f"Error: The file {file_path} does not exist.")
